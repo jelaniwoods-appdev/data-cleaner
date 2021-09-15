@@ -16,5 +16,8 @@ for x in df.index:
 df.drop_duplicates(inplace = True)
 
 df.plot()
-# plt.show()
+# Save plot as PNG
 plt.savefig('plot.png')
+
+# Print to Terminal
+print(df.to_string())
