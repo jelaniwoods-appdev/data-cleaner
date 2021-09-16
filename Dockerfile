@@ -1,7 +1,7 @@
 FROM ubuntu
 
-# Update default OS packages
-RUN apt-get update && apt-get install -y software-properties-common gcc && \
+# Update default OS packages and python dependencies
+RUN apt-get update && apt-get install -y software-properties-common gcc vim && \
     add-apt-repository -y ppa:deadsnakes/ppa
 
 # Install python

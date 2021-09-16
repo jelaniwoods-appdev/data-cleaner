@@ -12,16 +12,15 @@ for row in df.index:
   if df.loc[row, "Duration"] > 120:
     df.drop(row, inplace = True)
 
-# Convert date to proper format
-df['Date'] = pd.to_datetime(df['Date'])
-
-# Remove rows with NULL Date
-df.dropna(subset=['Date'], inplace = True)
+# Drop Date column
+df.drop("Date", axis = 1, inplace = True)
 
 # Drop duplicate rows
 df.drop_duplicates(inplace = True)
 
+# Create the plot
 df.plot()
+
 # Save plot as PNG
 plt.savefig('plot.png')
 
